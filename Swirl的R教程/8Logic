@@ -1,0 +1,81 @@
+
+> TRUE == TRUE
+[1] TRUE
+
+> (FALSE == TRUE) == FALSE
+[1] TRUE
+
+> 6 == 7
+[1] FALSE
+
+> 6 < 7
+[1] TRUE
+
+> 10 <= 10
+[1] TRUE
+
+> 5 != 7
+[1] TRUE
+
+> !5== 7
+[1] TRUE
+
+> FALSE & FALSE
+[1] FALSE
+
+> TRUE & c(TRUE, FALSE, FALSE)
+[1]  TRUE FALSE FALSE
+
+> TRUE && c(TRUE, FALSE, FALSE)
+[1] TRUE
+
+> TRUE | c(TRUE, FALSE, FALSE)
+[1] TRUE TRUE TRUE
+
+> TRUE || c(TRUE, FALSE, FALSE)
+[1] TRUE
+
+| As you may recall, arithmetic has an order of operations and so do logical expressions. All AND
+| operators are evaluated before OR operators. Let's look at an example of an ambiguous case. Type: 5
+| > 8 || 6 != 8 && 4 > 3.9
+
+> 5 > 8 || 6 != 8 && 4 > 3.9
+[1] TRUE
+
+> isTRUE(6 > 4)
+[1] TRUE
+
+> identical('twins', 'twins')
+[1] TRUE
+
+| You should also be aware of the xor() function, which takes two arguments. The xor() function
+| stands for exclusive OR. If one argument evaluates to TRUE and one argument evaluates to FALSE,
+| then this function will return TRUE, otherwise it will return FALSE. Try out the xor() function by
+| typing: xor(5 == 6, !FALSE)
+
+> xor(5 == 6, !FALSE)
+[1] TRUE
+
+| For the next few questions, we're going to need to create a vector of integers called ints. Create
+| this vector by typing: ints <- sample(10)
+
+> ints <- sample(10)
+
+> ints
+ [1]  8  5  1  2  9  7  4  6  3 10
+
+> ints > 5
+ [1]  TRUE FALSE FALSE FALSE  TRUE  TRUE FALSE  TRUE FALSE  TRUE
+
+> which(ints > 7)
+[1]  1  5 10
+
+| Like the which() function, the functions any() and all() take logical vectors as their argument.
+| The any() function will return TRUE if one or more of the elements in the logical vector is TRUE.
+| The all() function will return TRUE if every element in the logical vector is TRUE.
+
+> any(ints < 0)
+[1] FALSE
+
+> all(ints > 0)
+[1] TRUE

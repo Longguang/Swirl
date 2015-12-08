@@ -1,0 +1,345 @@
+| Please choose a lesson, or type 0 to return to course menu.
+
+1: Central Tendency
+2: Dispersion
+3: Data Visualization
+
+Selection: 1
+
+| Attemping to load lesson dependencies...
+
+| Package ‘plotrix’ loaded correctly!
+
+| Package ‘openintro’ loaded correctly!
+
+  |                                                                                                                       |   0%
+
+| Today, I'll be teaching you the basics of data analysis. It probably makes sense to start by defining the word DATA.
+
+...
+
+  |====                                                                                                                   |   3%
+
+| According to Wikipedia, "Data are values of qualitative or quantitative variables, belonging to a set of items."
+
+...
+
+  |========                                                                                                               |   7%
+
+| Often the "set of items" that we are interested in studying is referred to as the POPULATION. Data analysis usually involves
+| studying a subset, or SAMPLE, of an entire population.
+
+...
+
+  |============                                                                                                           |  10%
+
+| Here is a diagram showing the relationship between a population and a sample.
+
+...
+
+  |================                                                                                                       |  14%
+
+| Data analysis should always start with a specific question of interest. For example, we might ask "What percentage of people
+| living in the United States are over six feet tall?"
+
+...
+
+  |=====================                                                                                                  |  17%
+
+| Here, our population of interest is everyone living in the US. Since it's impractical to measure the heights of over 300
+| million people, we could instead choose 100 people at random and measure their heights. Our hope would be that this sample of
+| 100 people is REPRESENTATIVE of the entire US population.
+
+...
+
+  |=========================                                                                                              |  21%
+
+| Let's quickly test your understanding of the term REPRESENTATIVE. If you were interested in studying the health of men living
+| in the US, ages 18-25, which sample would be more representative of the target population: a sample of 50 men who live in a
+| nearby retirement home, or a sample of 50 men who are students at a local university?
+
+1: Men living at the retirement home
+2: College students
+
+Selection: 1
+
+| Nice try, but that's not exactly what I was hoping for. Try again.
+
+| Since your target population is all men ages 18-25 living in the US, which of these 2 sample populations
+| more closely matches the population of interest?
+
+1: College students
+2: Men living at the retirement home
+
+Selection: 1
+
+| Your dedication is inspiring!
+
+  |=============================                                                                                          |  24%
+
+| Would you like to watch a video on these topics now?
+
+Yes or No? n
+
+  |=================================                                                                                      |  28%
+
+| The purpose of analyzing a sample is to draw conclusions about the population from which the sample was
+| selected. This is called INFERENCE and is the primary goal of INFERENTIAL STATISTICS.
+
+...
+
+  |=====================================                                                                                  |  31%
+
+| In order to make any inferences about the population, we first need to describe the sample. This is the
+| primary goal of DESCRIPTIVE STATISTICS.
+
+...
+
+  |=========================================                                                                              |  34%
+
+| If we want to describe our sample using just one number, how would we best do it? A good start is to find
+| the center, the middle, or the most common element of our data. Statisticians call this the CENTRAL
+| TENDENCY.
+
+...
+
+  |=============================================                                                                          |  38%
+
+| There are three different methods for finding such a number and the applicability of each method depends
+| on the situation. Those three methods are called the MEAN, MEDIAN, and MODE.
+
+...
+
+  |=================================================                                                                      |  41%
+
+| Would you like to watch a brief video on mean, median, and mode?
+
+Yes or No? n
+
+  |=====================================================                                                                  |  45%
+
+| Mean, median, and mode are all measures of ____________.
+
+1: significance
+2: central tendency
+3: deviation
+4: variation
+
+Selection: 2
+
+| Great job!
+
+  |=========================================================                                                              |  48%
+
+| Which of the following terms are of most importance when describing the central tendency of a data set?
+
+1: population, sample, representative
+2: statistics, population, mode
+3: mode, median, mean
+4: median, mode, range
+
+Selection: 3
+
+| All that practice is paying off!
+
+  |==============================================================                                                         |  52%
+
+| To illustrate these concepts, we will now look at a real dataset from the 'openintro' R package, which
+| has already been loaded for you. Type 'cars' and press Enter to see the dataset we'll be working with.
+
+> cars
+      type price mpgCity driveTrain passengers weight
+1    small  15.9      25      front          5   2705
+2  midsize  33.9      18      front          5   3560
+3  midsize  37.7      19      front          6   3405
+4  midsize  30.0      22       rear          4   3640
+5  midsize  15.7      22      front          6   2880
+6    large  20.8      19      front          6   3470
+7    large  23.7      16       rear          6   4105
+8  midsize  26.3      19      front          5   3495
+9    large  34.7      16      front          6   3620
+10 midsize  40.1      16      front          5   3935
+11 midsize  15.9      21      front          6   3195
+12   large  18.8      17       rear          6   3910
+13   large  18.4      20      front          6   3515
+14   large  29.5      20      front          6   3570
+15   small   9.2      29      front          5   2270
+16   small  11.3      23      front          5   2670
+17 midsize  15.6      21      front          6   3080
+18   small  12.2      29      front          5   2295
+19   large  19.3      20      front          6   3490
+20   small   7.4      31      front          4   1845
+21   small  10.1      23      front          5   2530
+22 midsize  20.2      21      front          5   3325
+23   large  20.9      18       rear          6   3950
+24   small   8.4      46      front          4   1695
+25   small  12.1      42      front          4   2350
+26   small   8.0      29      front          5   2345
+27   small  10.0      22      front          5   2620
+28 midsize  13.9      20      front          5   2885
+29 midsize  47.9      17       rear          5   4000
+30 midsize  28.0      18      front          5   3510
+31 midsize  35.2      18       rear          4   3515
+32 midsize  34.3      17      front          6   3695
+33   large  36.1      18       rear          6   4055
+34   small   8.3      29      front          4   2325
+35   small  11.6      28      front          5   2440
+36 midsize  61.9      19       rear          5   3525
+37 midsize  14.9      19       rear          5   3610
+38   small  10.3      29      front          5   2295
+39 midsize  26.1      18      front          5   3730
+40   small  11.8      29      front          5   2545
+41 midsize  21.5      21      front          5   3200
+42 midsize  16.3      23      front          5   2890
+43   large  20.7      19      front          6   3470
+44   small   9.0      31      front          4   2350
+45 midsize  18.5      19      front          5   3450
+46   large  24.4      19      front          6   3495
+47   small  11.1      28      front          5   2495
+48   small   8.4      33        4WD          4   2045
+49   small  10.9      25        4WD          5   2490
+50   small   8.6      39      front          4   1965
+51   small   9.8      32      front          5   2055
+52 midsize  18.2      22      front          5   3030
+53   small   9.1      25      front          4   2240
+54 midsize  26.7      20      front          5   3245
+
+| You are quite good my friend!
+
+  |==================================================================                                                     |  55%
+
+| You'll notice the rows are numbered 1 through 54, each representing exactly one car in the dataset. For
+| each car, the following VARIABLES, or characteristics, are reported: 'type' (small, midsize, large),
+| 'price' (USD), 'mpgCity' (city miles per gallon), 'driveTrain' (4WD, front, rear), 'passengers' (total
+| capacity), and 'weight' (lbs).
+
+...
+
+  |======================================================================                                                 |  59%
+
+| We'll be focusing on the 'mpgCity' variable in this lesson. For simplicity, let's extract it from our
+| dataset and store it in a new variable.
+
+...
+
+  |==========================================================================                                             |  62%
+
+| Access the 'mpgCity' variable from the 'cars' dataset using the 'dataset$variable' notation.
+
+> dataset$variable
+Error: object 'dataset' not found
+> cars$mpgCity
+ [1] 25 18 19 22 22 19 16 19 16 16 21 17 20 20 29 23 21 29 20 31 23 21 18 46 42 29 22 20 17 18 18 17 18 29
+[35] 28 19 19 29 18 29 21 23 19 31 19 19 28 33 25 39 32 22 25 20
+
+| You are quite good my friend!
+
+  |==============================================================================                                         |  66%
+
+| Now store the contents of the 'cars$mpgCity' in a new variable called 'myMPG'.
+
+> cars[, "myMPG"] <- cars$mpgCity
+
+| That's not the expression I expected but it works.
+
+| cars[, "myMPG"] <- cars$mpgCity is not identical to myMPG <- cars$mpgCity. Differences: target, current
+| do not match when deparsed
+
+| Excellent job!
+
+  |==================================================================================                                     |  69%
+
+| The ARITHMETIC MEAN, or simply the MEAN or AVERAGE, is the most common measurement of central tendency.
+| To calculate the mean of a dataset, you first sum all of the values and then divide that sum by the total
+| number of values in the dataset.
+
+...
+
+  |======================================================================================                                 |  72%
+
+| However, when there are many values of interest, it becomes tedious to do this calculation by hand.
+| Luckily, R has a built-in function for computing the mean. The syntax for doing so is 'mean(variable)'.
+
+...
+
+  |==========================================================================================                             |  76%
+
+| Compute the mean value for the 'myMPG' variable now.
+
+warning messages from top-level task callback 'mini'
+Warning message:
+In stri_c(..., sep = sep, collapse = collapse, ignore_null = TRUE) :
+  longer object length is not a multiple of shorter object length
+> mean(myMPG)
+[1] 23.31481
+
+| All that practice is paying off!
+
+  |==============================================================================================                         |  79%
+
+| Extreme values in our dataset can have a significant influence on the mean. For instance, if there was a
+| car in our dataset that got 200 miles per gallon, this would inflate the mean upwards. This could be
+| misleading since none of the other cars get anywhere near this gas mileage.
+
+...
+
+  |==================================================================================================                     |  83%
+
+| An alternative to the mean, which is not influenced at all by extreme values, is the MEDIAN. The median
+| is computed by sorting all values from least to greatest and then selecting the middle value. If there is
+| an even number of values, then there are actually 2 middle values. In this case, the MEDIAN is equal to
+| the MEAN of the 2 middle values. Don't worry if this is a little confusing. It will become more clear
+| with practice.
+
+...
+
+  |=======================================================================================================                |  86%
+
+| R also has a function for computing the median of a dataset and this is done by typing
+| 'median(variable)'. Find the median value of your 'myMPG' variable now.
+
+> median(myMPG)
+[1] 21
+
+| You got it!
+
+  |===========================================================================================================            |  90%
+
+| Finally, we may be most interested in finding the value that shows up the most in our dataset. In other
+| words, what is the most common value in our dataset? This is called the MODE and it is found by counting
+| the number of times that each value appears in the dataset and selecting the most frequent value.
+
+...
+
+  |===============================================================================================================        |  93%
+
+| Use the 'table' function to see how many times each value appears for your 'myMPG' variable. The syntax
+| for this function is the same as for the others you've seen.
+
+> table(myMPG)
+myMPG
+16 17 18 19 20 21 22 23 25 28 29 31 32 33 39 42 46 
+ 3  3  6  8  5  4  4  3  3  2  6  2  1  1  1  1  1 
+
+| That's correct!
+
+  |===================================================================================================================    |  97%
+
+| Look at your table for the 'myMPG' variable that you created above. The first row gives you the value of
+| your variable and the second row gives you the number of times it appears in your dataset. Since the mode
+| is the value of our variable that appears most frequently, what is the mode of your 'myMPG' variable?
+
+warning messages from top-level task callback 'mini'
+Warning message:
+In stri_c(..., sep = sep, collapse = collapse, ignore_null = TRUE) :
+  longer object length is not a multiple of shorter object length
+> 19
+[1] 19
+
+| You are quite good my friend!
+
+  |=======================================================================================================================| 100%
+
+| Congratulations! You've made it through your first lesson. We introduced basic concepts related to data
+| and data analysis. Specifically, you learned three important measures of central tendency: mean, median,
+| and mode. You also know how to compute these using R.

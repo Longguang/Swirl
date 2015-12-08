@@ -1,0 +1,147 @@
+1: Segment 1.1 Fundamentals
+2: Segment 1.2 Variables
+3: Segment 1.3 Vectors
+4: Segment 1.4 Matrices
+5: Segment 1.5 Lists and Data Frames
+6: Segment 1.6 Logical Vectors and Operators
+
+Selection: 2
+
+  |                                                                                         |   0%
+
+| Would you like to re-watch the video for this segment?
+
+Yes or No? n
+
+  |==========                                                                               |  11%
+
+| Would you like to view the transcript of the code used in this video segment?
+
+Yes or No? n
+
+  |====================                                                                     |  22%
+
+| Which of the following is *not* a permitted variable name in R?
+
+1: some-variable
+2: some.variable
+3: some_variable
+4: someVariable
+
+Selection: 2
+
+| Not quite right, but keep trying.
+
+| Variable names in R can contain uppercase or lowercase letters, digits (except at the start of
+| the variable), periods, or underscores
+
+1: someVariable
+2: some_variable
+3: some-variable
+4: some.variable
+
+Selection: 3
+
+| That's the answer I was looking for.
+
+  |==============================                                                           |  33%
+
+| Create a variable called mynum with the value 200.
+
+> mynum <- 200
+
+| Keep up the great work!
+
+  |========================================                                                 |  44%
+
+| Create a character variable called mychar that contains the words "hello world"
+
+> mychar <- 'hello world'
+
+| You are doing so well!
+
+  |=================================================                                        |  56%
+
+| Add 20 to your "mynum" variable and save it to a new variable, "mynum2"
+
+> mynum2 <- 20 + mynum
+
+| Almost! Try again. Or, type info() for more options.
+
+| Use the assignment operator, "=", and on the right hand side put the expression you want to
+| calculate
+
+> mynum2
+[1] 220
+
+| You almost had it, but not quite. Try again. Or, type info() for more options.
+
+| Use the assignment operator, "=", and on the right hand side put the expression you want to
+| calculate
+
+> mynum2 = 20 + mynum
+
+| That's not the answer I was looking for, but try again. Or, type info() for more options.
+
+| Use the assignment operator, "=", and on the right hand side put the expression you want to
+| calculate
+
+> info()
+
+| When you are at the R prompt (>):
+| -- Typing skip() allows you to skip the current question.
+| -- Typing play() lets you experiment with R on your own; swirl will ignore what you do...
+| -- UNTIL you type nxt() which will regain swirl's attention.
+| -- Typing bye() causes swirl to exit. Your progress will be saved.
+| -- Typing main() returns you to swirl's main menu.
+| -- Typing info() displays these options again.
+
+> skip()
+
+| Entering the following correct answer for you...
+
+> mynum2 = mynum + 20
+
+| Your dedication is inspiring!
+
+  |===========================================================                              |  67%
+
+| Use R to calculate 300 divided by 90 (you do not have to save it to a variable)
+
+> (300/90)
+[1] 3.333333
+
+| Give it another try. Or, type info() for more options.
+
+| Use "/" for division
+
+> 300/90
+[1] 3.333333
+
+| Nice work!
+
+  |=====================================================================                    |  78%
+
+| Use R to calculate 8 to the power of 4 (you do not have to save it to a variable)
+
+> skip()
+
+| Entering the following correct answer for you...
+
+> 8^4
+
+| You nailed it! Good job!
+
+  |===============================================================================          |  89%
+
+| Use the "log" function to compute the natural logarithm of 15
+
+> log(15)
+[1] 2.70805
+
+| You are really on a roll!
+
+  |=========================================================================================| 100%
+
+| The function "cos" computes the trigonometric cosine of a number. Use this function to compute
+| the cosine of 15.
